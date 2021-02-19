@@ -1,0 +1,27 @@
+<html>
+    <head>
+        <meta charset="UTF-8" />
+        <title>홀수</title>
+    </head>
+    <body>
+        <script>
+            function solution(arr) {
+                let answer = [],
+                    result = 0,
+                    min = 1000;
+                for (let value of arr) {
+                    if (value % 2 === 1) {
+                        result += value;
+                        if (min > value) min = value;
+                    }
+                }
+                answer.push(result);
+                answer.push(min);
+                return answer;
+            }
+
+            arr = [12, 77, 38, 41, 53, 92, 85];
+            console.log(solution(arr));
+        </script>
+    </body>
+</html>
