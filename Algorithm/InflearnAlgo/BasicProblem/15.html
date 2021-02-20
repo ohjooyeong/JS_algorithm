@@ -1,0 +1,28 @@
+<html>
+    <head>
+        <meta charset="UTF-8" />
+        <title>가운데 문자 출력</title>
+    </head>
+    <body>
+        <script>
+            function solution(str) {
+                let answer = 0,
+                    len = str.length;
+                if (len % 2 === 1) {
+                    len = Math.floor(len / 2);
+                    // answer = str.substring(len, len + 1);
+                    answer = str.substr(len, 1);
+                } else {
+                    len = Math.floor(len / 2) - 1;
+                    // answer = str.substring(len, len + 2);
+                    answer = str.substr(len, 2);
+                }
+
+                return answer;
+            }
+
+            let str = "elements";
+            console.log(solution(str));
+        </script>
+    </body>
+</html>

@@ -1,0 +1,27 @@
+<html>
+    <head>
+        <meta charset="UTF-8" />
+        <title>대문자 찾기</title>
+    </head>
+    <body>
+        <script>
+            function solution(str) {
+                let answer = 0;
+                for (let x of str) {
+                    if (x === x.toUpperCase()) {
+                        answer++;
+                    }
+                    // let num = x.charCodeAt();
+                    // if (65 <= num && num <= 90) {
+                    //     answer++;
+                    // }
+                }
+
+                return answer;
+            }
+
+            let str = "KoreaTimeGood";
+            console.log(solution(str));
+        </script>
+    </body>
+</html>
