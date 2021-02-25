@@ -1,0 +1,31 @@
+<html>
+    <head>
+        <meta charset="UTF-8" />
+        <title>유효한 팰린드롬</title>
+    </head>
+    <body>
+        <script>
+            function solution(s) {
+                let answer = "YES";
+                let str = "";
+                // let check_eng = /[a-zA-Z]/;
+                // for (let x of s) {
+                //     if (check_eng.test(x)) {
+                //         str += x;
+                //     }
+                // }
+                str = s.toLowerCase().replace(/[^a-z]/g, "");
+                for (let i = 0; i < Math.floor(str.length / 2); i++) {
+                    if (str[i] !== str[str.length - 1 - i]) {
+                        answer = "NO";
+                        return answer;
+                    }
+                }
+                return answer;
+            }
+
+            let str = "found7, time: study; Yduts; emit, 7Dnuof";
+            console.log(solution(str));
+        </script>
+    </body>
+</html>

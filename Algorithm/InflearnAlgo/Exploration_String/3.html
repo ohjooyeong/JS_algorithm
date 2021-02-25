@@ -1,0 +1,25 @@
+<html>
+    <head>
+        <meta charset="UTF-8" />
+        <title>숫자만 추출</title>
+    </head>
+    <body>
+        <script>
+            function solution(s) {
+                let answer;
+                let str = "";
+
+                for (let x of s) {
+                    if (!isNaN(x)) {
+                        str += x;
+                    }
+                }
+                answer = Number(str);
+                return answer;
+            }
+
+            let str = "g0en2T0s8eSoft";
+            console.log(solution(str));
+        </script>
+    </body>
+</html>

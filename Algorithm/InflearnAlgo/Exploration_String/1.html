@@ -1,0 +1,28 @@
+<html>
+    <head>
+        <meta charset="UTF-8" />
+        <title>회문문자열</title>
+    </head>
+    <body>
+        <script>
+            function solution(s) {
+                let answer = "YES";
+                s = s.toUpperCase();
+                let n = Math.floor(s.length / 2);
+                for (let i = 0; i < n; i++) {
+                    if (s[i] !== s[s.length - 1 - i]) {
+                        answer = "NO";
+                        return answer;
+                    }
+                }
+                // if (s.split("").reverse().join("") !== s) {
+                //     answer = NO;
+                // }
+                return answer;
+            }
+
+            let str = "gooG";
+            console.log(solution(str));
+        </script>
+    </body>
+</html>
