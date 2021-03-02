@@ -1,0 +1,45 @@
+<html>
+    <head>
+        <meta charset="UTF-8" />
+        <title>자릿수의 합</title>
+    </head>
+    <body>
+        <script>
+            function solution(n, arr) {
+                let answer = 0,
+                    max = Number.MIN_SAFE_INTEGER;
+                let sum, tmp;
+                for (let x of arr) {
+                    sum = 0;
+                    tmp = x;
+                    while (x > 0) {
+                        sum += x % 10;
+                        x = Math.floor(x / 10);
+                    }
+                    if (sum >= max) {
+                        max = sum;
+                        if (tmp > answer) {
+                            answer = tmp;
+                        }
+                    }
+                }
+                // String으로 변환 후 정답지. reduce 중요!!!!
+                // for (let x of arr) {
+                //     let sum = x
+                //         .toString()
+                //         .split("")
+                //         .reduce((a, b) => a + Number(b), 0);
+                //     if (sum >= max) {
+                //         max = sum;
+                //         if (x > answer) {
+                //             answer = x;
+                //         }
+                //     }
+                // }
+                return answer;
+            }
+            let arr = [128, 460, 603, 40, 521, 137, 123];
+            console.log(solution(7, arr));
+        </script>
+    </body>
+</html>
