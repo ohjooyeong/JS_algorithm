@@ -1,0 +1,36 @@
+<html>
+    <head>
+        <meta charset="UTF-8" />
+        <title>K번째 큰 수</title>
+    </head>
+    <body>
+        <script>
+            function solution(m, arr) {
+                let answer = 0;
+                let tmp = [];
+                for (let i = 0; i < arr.length; i++) {
+                    for (let j = i + 1; j < arr.length; j++) {
+                        for (let k = j + 1; k < arr.length; k++) {
+                            tmp.push(arr[i] + arr[j] + arr[k]);
+                        }
+                    }
+                }
+                tmp = tmp.filter((v, i) => {
+                    if (tmp.indexOf(v) === i) return v;
+                });
+                tmp.sort((a, b) => {
+                    return b - a;
+                });
+
+                // tmp를 set으로 받을 때 tmp를 다시 array로 바꾸고 sort하는 법.
+                // let tmp = new Set();
+                // let a = Array.from(tmp).sort();
+
+                return (answer = tmp[2]);
+            }
+
+            let arr = [13, 15, 34, 23, 45, 65, 33, 11, 26, 42];
+            console.log(solution(3, arr));
+        </script>
+    </body>
+</html>
